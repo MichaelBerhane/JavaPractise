@@ -1,0 +1,47 @@
+
+import java.util.Scanner;
+
+public class ArrayRemove {
+
+	/**
+	 * @param args
+	 */
+	
+	public String[] remove (String s[], int n){
+		String newarray [] = new String [(s.length) - 1];
+		n -= 1;
+
+		for(int i = 0; i < newarray.length; i++){
+			if( i >= n){
+				newarray[i] = s[i + 1];
+			}
+			else
+				newarray[i] = s[i];
+		}
+		
+		return newarray;
+	}
+	
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		String [] array = {"hello", "my", "name", "is", "Slim", "Shady"};
+		for(int j = 0; j < array.length; j++){
+			System.out.print(array[j] + " ");
+		}
+	
+		Scanner in = new Scanner(System.in);
+		int n = in.nextInt();
+		
+		
+		ArrayRemove object = new ArrayRemove();
+		String [] updatedarray = object.remove(array, n);
+		
+		for(int i = 0; i < updatedarray.length; i++){
+			System.out.print(updatedarray[i] + " ");
+		}
+	
+	}
+
+}
